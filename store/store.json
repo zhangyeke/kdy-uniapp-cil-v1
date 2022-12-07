@@ -1,0 +1,36 @@
+{
+  "vuex_user": {
+    "des": "用户信息",
+    "meta": {
+      "is_storage": true, 
+      "is_mixin": true 
+    },
+    "value": null
+  },
+
+  "vuex_token": {
+    "des": "登录凭证",
+    "meta": {
+      "is_storage": true, 
+      "is_mixin": true 
+    },
+    "value": ""
+  },
+
+  "vuex_back_link": {
+    "desc": "回跳地址，如果登录后回跳",
+    "meta": {
+      "is_storage": false, 
+      "is_mixin": true 
+    },
+    "value": ""
+  },
+  "vuex_colors": {
+    "desc": "项目颜色",
+    "meta": {
+      "is_storage": false, 
+      "is_mixin": true 
+    },
+    "value": null
+  }
+}

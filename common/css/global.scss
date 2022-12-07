@@ -1,0 +1,340 @@
+/*边距*/
+
+$margins:(
+	"p":padding,
+	"px":padding-left padding-right,
+	"py":padding-top padding-bottom,
+	"pt":padding-top,
+	"pr":padding-right,
+	"pb":padding-bottom,
+	"pl":padding-left,
+	"m":margin,
+	"mx":margin-left margin-right,
+	"my":margin-top margin-bottom,
+	"mt":margin-top,
+	"mr":margin-right,
+	"mb":margin-bottom,
+	"ml":margin-left,
+);
+ @for $i from 5 through 100 {
+	 @each $key in map-keys($margins) {
+	 	.#{$key}_#{$i}{
+			@if length(map-get($margins,$key)) > 1{
+				@each $v in map-get($margins,$key) {
+					#{$v}:$i+rpx;
+				}
+			} @else {
+				#{map-get($margins,$key)}: $i+rpx;
+			}
+		}
+	 }
+ }
+ 
+ // 水平居中
+ .m_auto {
+     margin: 0 auto;
+ }
+ 
+/*字体大小*/
+@for $i from 10 through 80{
+	.text_#{$i}{
+		font-size: $i+rpx;
+	}
+}
+
+/*字体粗细*/
+@for $i from 300 through 900{
+	@if $i % 100 == 0 {
+		.font_#{$i}{
+			font-weight: $i;
+		}
+	}
+}
+
+/*文本的间距*/ 
+@for $i from 1 through 5{
+	.text_spacing_#{$i}{
+		letter-spacing: $i+rpx;
+	}
+}
+
+/*文本对齐*/
+.text_left{
+	text-align: left;
+}
+
+.text_right{
+	text-align: right;
+}
+
+.text_center{ 
+	text-align: center;
+}
+// 两端对齐
+.text_justify{
+	text-align: justify;
+}
+/*用于控制 inline 或 table-cell 盒元素垂直对齐的工具类。*/ 
+.text_top{
+	vertical-align: text-top;
+}
+.text_bottom{
+	vertical-align: text-bottom;
+}
+.text_middle{
+	vertical-align: middle;
+}
+/*文本转换*/
+// 大写
+.uppercase {
+	text-transform: uppercase;
+}
+//小写
+.lowercase {
+	text-transform: lowercase;
+}
+// 每个单词的第一个字母为大写
+.capitalize {
+  text-transform: capitalize;
+}
+
+/*文本溢出*/
+.text_line_1 {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@for $i from 2 through 5 {
+	.text_line_#{$i}{
+		display: -webkit-box; 
+		-webkit-line-clamp:$i;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}
+
+/*文本不换行*/
+.text_nowrap{
+	white-space: nowrap;
+}
+
+/*文本装饰*/
+// 下划线
+.underline{
+	-webkit-text-decoration-line: underline;
+	text-decoration-line: underline;
+}
+// 上划线
+.overline {
+  -webkit-text-decoration-line: overline;
+  text-decoration-line: overline;
+}
+// 中线(删除线)
+.deleteline{
+	-webkit-text-decoration-line: line-through;
+	text-decoration-line: line-through;
+}
+
+// 下虚线 注意:在 Edge/Internet 浏览器中没有效果。
+.dottenline{
+	text-decoration: underline dotted ;
+}
+// 下波浪线 注意:在 Edge/Internet 浏览器中没有效果。
+.waveline{
+	text-decoration: underline wavy;
+}
+
+/*文本装饰线的粗线和颜色*/
+@for $i from 1 through 5 {
+	.underline_#{$i}{
+		text-underline-offset:$i+rpx;
+		// text-decoration-line: underline;
+		// text-decoration-thickness:$i+rpx;
+	}
+}
+ 
+
+/*文本首行缩进*/
+ .indent{
+	 text-indent: 2rem;
+ }
+
+/*不透明度*/ 
+
+@for $i from 0 through 10{
+	// 文本不透明度
+	// .text_opacity_#{$i}{
+	// 	--tw-text-opacity: $i/10;
+	// }
+	
+	.opacity_#{$i} {
+	    opacity: $i / 10;
+	}
+}
+
+
+/*盒子的转换*/
+.block{
+	display: block;
+}
+.hidden{
+	display: none;
+}
+.inline{
+	display: inline;
+}
+.inline_block{
+	display: inline-block;
+}
+.flex{
+	display: flex;
+}
+.grid{
+	display: grid;
+}
+
+// 盒子隐藏和显示（占位）
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+// 禁止元素事件
+.events_none {
+  pointer-events: none;
+}
+
+/*flex 工具类*/ 
+.flex_col{
+	flex-direction: column;
+}
+.flex_col_reverse{
+	flex-direction: column-reverse;
+}
+.flex_row_reverse{
+	flex-direction: row-reverse;
+}
+
+.flex_wrap{
+	flex-wrap: wrap;
+}
+.flex_wrap_reverse{
+	flex-wrap: wrap-reverse;
+}
+.flex_1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
+}
+
+$flexContents:(
+	"start":flex-start,
+	"end":flex-end,
+	"center":center,
+	"between":space-between,
+	"around":space-around,
+	"evenly":space-evenly,
+);
+
+@each $key in map-keys($flexContents){
+	// 用于控制 flex 和 grid 子条目如何沿容器主轴定位的工具类。
+	.justify_#{$key}{
+		justify-content: map-get($flexContents, $key);
+	}
+	// 用于控制行在多行 flex 和 grid 容器中定位的工具类。
+	.content_#{$key}{
+		align-content: map-get($flexContents, $key);
+	}
+}
+
+$flexItems:start,end,auto,center,stretch;
+
+@each $v in $flexItems {
+	// 用于控制网格子条目沿其行内轴对齐的工具类。
+	.justify_items_#{$v}{
+		justify-items: $v;
+	}
+	// 用于控制单个网格子条目沿其行内轴对齐的工具类。
+	.justify_self_#{$v} {
+	  justify-self: $v;
+	}
+	// 用于控制 flex 和 grid 子条目沿容器的交叉轴定位的工具类。
+	.items_#{$v}{
+		@if index($flexItems,$v) < 3 {
+			align-items: flex-#{$v};
+		}@else{
+			align-items: $v;
+		}
+	}
+	// 用于控制单个 flex 和 grid 子条目沿其容器的交叉轴定位的工具类。
+	.self_#{$v}{
+		@if index($flexItems,$v) < 3 {
+			align-items: flex-#{$v};
+		}@else{
+			align-items: $v;
+		}
+	}
+}
+
+@for $v from 1 through 5{
+	.order_#{$v}{
+		order: $v;
+	}
+}
+
+/*定位工具类*/
+$Positions:static,fixed,absolute,relative,sticky;
+@each $v in $Positions {
+	.#{$v}{
+		position: $v;
+	}
+}
+
+/*用于控制替换元素内容如何调整大小的工具类。*/
+$ObjectFits:contain,cover,fill,none,scale-down;
+@each $v in $ObjectFits {
+	.object_#{$v}{
+		object-fit: $v;
+	}
+}
+
+/*百分比宽度高度*/ 
+@for $i from 10 through 100 {
+    .w_#{$i} {
+        width:$i#{'%'} !important;
+    }
+    .h_#{$i} {
+        height:$i#{'%'};
+    }
+}
+/*圆角*/
+.round {
+    border-radius: 50%;
+}
+
+@for $i from 10 through 50 {
+	.br_#{$i}{
+		border-radius: $i+rpx;
+	}
+}
+
+// 字体颜色 1 - 9
+@for $i from 1 through 9 {
+    .color_#{$i} {
+        color: #{'#'}#{$i}#{$i}#{$i};
+    }
+}
+
+.color_w{
+	color:$u-color-white;
+}
+.color_b{
+	color:$u-color-block;
+}
