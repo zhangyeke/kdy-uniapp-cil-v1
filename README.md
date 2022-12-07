@@ -100,6 +100,6 @@ git clone https://gitee.com/zhang-yeke/kdy-uni-cil-v1.git
 
 - [unaipp](https://github.com/dcloudio/uni-app)是一个使用 `Vue.js` 开发小程序、H5、App的统一前端框架。
 
-- uview-ui(https://github.com/umicro/uView) 多平台快速开发的UI框架，uniapp生态最优秀的UI框架。
+- [uview-ui]([GitHub - umicro/uView: uView UI，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水](https://github.com/umicro/uView)) 多平台快速开发的UI框架，uniapp生态最优秀的UI框架。
 
 - [luch-request](https://github.com/lei-mu/luch-request)基于 Promise 对象实现更简单的 request 使用方式，支持请求和响应拦截
