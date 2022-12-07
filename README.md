@@ -1,12 +1,14 @@
 # **kdy-uniapp-cil**
 
-<img src="https://raster.shields.io/badge/uniapp-3.6+-2b9939?link=https://uniapp.dcloud.net.cn/">
-<img src="https://raster.shields.io/badge/uview-1.8+-4aafff?link=https://v1.uviewui.com/">
-<img src="https://raster.shields.io/badge/Vue-2.6+-4fc08d?logo=vue.js&link=https://v2.cn.vuejs.org/">
-<img src="https://raster.shields.io/badge/Vuex-3.0+-4fc08d?logo=vue.js&link=https://v3.vuex.vuejs.org/zh/">
-<img src="https://raster.shields.io/badge/VueI18n-8.2+-4fc08d?logo=vue.js&link=https://uniapp.dcloud.net.cn/tutorial/i18n.html#vue%E7%95%8C%E9%9D%A2%E5%92%8Cjs%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96">
-<img src="https://raster.shields.io/badge/luchRequest-3.0.4-263137?link=https://www.quanzhan.co/luch-request/guide/3.x/">
-<img src="https://raster.shields.io/badge/sass-8.0+-cc6699?logo=Sass&link=https://www.sass.hk/">
+<div>
+  <img src="https://raster.shields.io/badge/uniapp-3.6+-2b9939?link=https://uniapp.dcloud.net.cn/">
+  <img src="https://raster.shields.io/badge/uview-1.8+-4aafff?link=https://v1.uviewui.com/">
+  <img src="https://raster.shields.io/badge/Vue-2.6+-4fc08d?logo=vue.js&link=https://v2.cn.vuejs.org/">
+  <img src="https://raster.shields.io/badge/Vuex-3.0+-4fc08d?logo=vue.js&link=https://v3.vuex.vuejs.org/zh/">
+  <img src="https://raster.shields.io/badge/VueI18n-8.2+-4fc08d?logo=vue.js&link=https://uniapp.dcloud.net.cn/tutorial/i18n.html#vue%E7%95%8C%E9%9D%A2%E5%92%8Cjs%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96">
+  <img src="https://raster.shields.io/badge/luchRequest-3.0.4-263137?link=https://www.quanzhan.co/luch-request/guide/3.x/">
+  <img src="https://raster.shields.io/badge/sass-8.0+-cc6699?logo=Sass&link=https://www.sass.hk/">
+</div>
 
 ### 描述✨
 
@@ -20,11 +22,11 @@
 
 3. 集成了[luch-request](https://www.quanzhan.co/luch-request/)请求库,并配置了请求拦截和响应拦截以及一些相应的配置
 
-4. [vuex和缓存实现全局变量]([全局变量的实现方式 | uView - 多平台快速开发的UI框架 - uni-app UI框架](https://v1.uviewui.com/guide/globalVariable.html))
+4. [vuex和缓存实现全局变量](https://v1.uviewui.com/guide/globalVariable.html)
 
 5. 全局公共函数
 
-6. [全局主题scss变量]([自定义主题 | uView - 多平台快速开发的UI框架 - uni-app UI框架](https://v1.uviewui.com/guide/theme.html))和全局css
+6. [全局主题scss变量](https://v1.uviewui.com/guide/theme.html)和全局css
 
 ### 项目目录📁
 
