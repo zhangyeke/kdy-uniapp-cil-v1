@@ -22,11 +22,11 @@
 
 3. 集成了[luch-request](https://www.quanzhan.co/luch-request/)请求库,并配置了请求拦截和响应拦截以及一些相应的配置
 
-4. [vuex和缓存实现全局变量]([全局变量的实现方式 | uView - 多平台快速开发的UI框架 - uni-app UI框架](https://v1.uviewui.com/guide/globalVariable.html))
+4. [vuex和缓存实现全局变量](https://v1.uviewui.com/guide/globalVariable.html)
 
 5. 全局公共函数
 
-6. [全局主题scss变量]([自定义主题 | uView - 多平台快速开发的UI框架 - uni-app UI框架](https://v1.uviewui.com/guide/theme.html))和全局css
+6. [全局主题scss变量](https://v1.uviewui.com/guide/theme.html)和全局css
 
 ### 项目目录📁
 
