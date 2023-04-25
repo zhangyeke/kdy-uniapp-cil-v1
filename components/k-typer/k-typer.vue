@@ -2,7 +2,8 @@
 	<view>
 		<template v-if="isDye" v-for="(item,index) in contents">
 			<text :key="index" v-show="cur_index>=index"
-				:style="[dye_text_indexs.includes(index) ? dyeTextStyle : {},{color:getTextColor(index)}]">{{item}}</text>
+				:style="[dye_text_indexs.includes(index) ? dyeTextStyle : {},{color:getTextColor(index)}]">
+				{{item}}</text>
 		</template>
 		<template v-if="!isDye">
 			<text :style="{color:getTextColor()}">{{cur_text}}</text>
@@ -29,6 +30,7 @@
 				type: [String, Array],
 				default: "",
 			},
+			// 自定义染色文本样式
 			dyeTextStyle: {
 				type: Object,
 				default: _ => {}
@@ -45,7 +47,7 @@
 			},
 			// 打字的速度
 			speed: {
-				type: [String, Number],
+				type: Number,
 				default: 100
 			},
 			// 默认从哪个索引开始
@@ -57,10 +59,11 @@
 		data() {
 			return {
 				cur_index: -1,
-				pause: false,
+				is_pause: false,
 				contents: [],
 				// 需要染色的索引列表
 				dye_text_indexs: [],
+				timer: null,
 			};
 		},
 		computed: {
@@ -72,14 +75,13 @@
 				return str
 			},
 		},
-		created() {
-			this.cur_index = this.startIndex - 1
-			if (this.isDye) {
-				this.contents = this.getContents()
-				this.findDyeTextIndex()
+		watch:{
+			content(v){
+				v && this.reset()
 			}
-
-			this.writeText()
+		},
+		created() {
+			this.start()
 		},
 		methods: {
 			findDyeTextIndex() {
@@ -127,15 +129,50 @@
 				}
 				return list
 			},
+			getCurrentText() {
+				let text = ""
+				if (this.isDye) {
+					for (let i = 0; i <= this.cur_index; i++) {
+						text+=this.contents[i]
+					}
+				} else {
+					
+				}
+				return text
+			},
+			continue(){
+				this.is_pause = false
+				this.writeText()
+			},
+			pause() {
+				this.is_pause = true
+				clearTimeout(this.timer)
+				this.$emit('pause',this.getCurrentText())
+			},
+			start(){
+				this.cur_index = this.startIndex - 1
+				if (this.isDye) {
+					this.contents = this.getContents()
+					this.dye_text_indexs.length = 0
+					this.findDyeTextIndex()
+				}
+				
+				this.writeText()
+			},
+			reset(){
+				clearTimeout(this.timer)
+				this.is_pause = false
+				this.start()
+			},
 			writeText() {
 				this.cur_index++
 				if (this.cur_index > this.content.length) {
-					this.pause = true
+					this.is_pause = true
 					this.$emit('finish')
 				}
 
-				if (!this.pause) {
-					setTimeout(this.writeText, this.speed)
+				if (!this.is_pause) {
+					this.timer = setTimeout(this.writeText, this.speed)
 				}
 			}
 		}
