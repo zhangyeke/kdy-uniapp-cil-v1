@@ -3,7 +3,7 @@ import Vue from 'vue'
 App.mpType = 'app'
 Vue.config.productionTip = false
 import store from '@/store/index.js'
-import uView from "uview-ui";
+import uView from "@/plugin/uview-ui";
 Vue.use(uView);
 // #ifndef APP-NVUE
 // nvue不支持main.js引入
@@ -19,7 +19,7 @@ Vue.mixin(uMixin)
 
 // #ifdef MP-WEIXIN  
 // 引入uView对小程序分享的mixin封装
-let mpShare = require('uview-ui/libs/mixin/mpShare.js')
+let mpShare = require('@/plugin/uview-ui/libs/mixin/mpShare.js')
 Vue.mixin(mpShare)
 // #endif
 

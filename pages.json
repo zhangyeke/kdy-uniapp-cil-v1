@@ -5,7 +5,7 @@
 	// app-plus-titleNView->searchInput->placeholder
 	// tabBar->list->text
 	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		"^u-(.*)": "@/plugin/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{

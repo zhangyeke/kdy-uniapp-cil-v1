@@ -1,6 +1,5 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png" @click="toggle"></image>
 		<view class="text-area px_10 m_10 font_600 text_20 opacity_5 underline_5">
 			<text>{{$t('hello')}}!</text>
 		</view>

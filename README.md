@@ -1,105 +1,106 @@
-# **kdy-uniapp-cil**
+<p align="center">
+    <img alt="logo" src="https://uviewui.com/common/logo.png" width="120" height="120" style="margin-bottom: 10px;">
+</p>
+<h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">uView</h3>
+<h3 align="center">多平台快速开发的UI框架</h3>
 
-<div>
-<img src="https://raster.shields.io/badge/uniapp-3.6+-2b9939?link=https://uniapp.dcloud.net.cn/">
-<img src="https://raster.shields.io/badge/uview-1.8+-4aafff?link=https://v1.uviewui.com/">
-<img src="https://raster.shields.io/badge/Vue-2.6+-4fc08d?logo=vue.js&link=https://v2.cn.vuejs.org/">
-<img src="https://raster.shields.io/badge/Vuex-3.0+-4fc08d?logo=vue.js&link=https://v3.vuex.vuejs.org/zh/">
-<img src="https://raster.shields.io/badge/VueI18n-8.2+-4fc08d?logo=vue.js&link=https://uniapp.dcloud.net.cn/tutorial/i18n.html#vue%E7%95%8C%E9%9D%A2%E5%92%8Cjs%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96">
-<img src="https://raster.shields.io/badge/luchRequest-3.0.4-263137?link=https://www.quanzhan.co/luch-request/guide/3.x/">
-<img src="https://raster.shields.io/badge/sass-8.0+-cc6699?logo=Sass&link=https://www.sass.hk/">
-</div>
 
-### 描述✨
+## 说明
 
-本模板是uniapp项目的基础模板,集成了uview-ui和i18n国际化,并封装了众多全局方法和全局样式,适合开箱即用,推荐开发新项目使用。如果对你有帮助的话，给个好评和star吧!🤞🤞🤞
+uView UI，是[uni-app](https://uniapp.dcloud.io/)生态优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水
 
-### 基本功能🛰
+## 特性
 
-1. 集成了vue-i18n国际化，默认获取手机系统语言，并声明vuex_lang全局变量，通过修改vuex_lang值即可转换其他其他语言
+- 兼容安卓，iOS，微信小程序，H5，QQ小程序，百度小程序，支付宝小程序，头条小程序
+- 60+精选组件，功能丰富，多端兼容，让您快速集成，开箱即用
+- 众多贴心的JS利器，让您飞镖在手，召之即来，百步穿杨
+- 众多的常用页面和布局，让您专注逻辑，事半功倍
+- 详尽的文档支持，现代化的演示效果
+- 按需引入，精简打包体积
 
-2. 集成[uview-ui](https://v1.uviewui.com/)，采用下载安装方式，已配置好，无需npm
 
-3. 集成了[luch-request](https://www.quanzhan.co/luch-request/)请求库,并配置了请求拦截和响应拦截以及一些相应的配置
+## 安装
 
-4. [vuex和缓存实现全局变量](https://v1.uviewui.com/guide/globalVariable.html)
-
-5. 全局公共函数
-
-6. [全局主题scss变量](https://v1.uviewui.com/guide/theme.html)和全局css
-
-### 项目目录📁
-
-```
-kdy-uni-cil-v1
-├─ .hbuilderx
-│  └─ launch.json
-├─ api  //api模块化管理目录
-├─ App.vue
-├─ common //公共资源目录
-│  ├─ css
-│  │  ├─ global.scss  //全局css
-│  │  └─ theme.scss   //主题scss变量 
-│  ├─ enum-file    //存放枚举数据的文件
-│  │  └─ tabbar-option.js
-│  └─ js //全局方法
-│     ├─ data-handle.js
-│     ├─ date-handle.js
-│     ├─ http.js //接口请求函数
-│     ├─ k.js
-│     ├─ page-handle.js
-│     ├─ permissions-handle.js //判定app权限是否开启的方法
-│     └─ utils.js
-├─ components    //项目的组件库
-│  └─ k-more-line-roll
-│     └─ k-more-line-roll.vue
-├─ config    //项目的配置文件
-│  ├─ env.dev.js    //开发环境
-│  ├─ env.prod.js   //生产环境 
-│  └─ index.js
-├─ index.html
-├─ locale    //i18n的字典
-│  ├─ en.json
-│  ├─ i18n-config.js
-│  ├─ zh-Hans.json
-│  └─ zh-Hant.json
-├─ main.js    //主入口
-├─ manifest.json    
-├─ pages    //页面
-│  └─ index
-│     ├─ index.vue
-│     └─ my.vue
-├─ pages.json    //页面配置文件
-├─ plugin    //存放插件的目录
-│  └─ luch-request
-├─ README.md    
-├─ static    //存储静态美术资源目录
-│  └─ logo.png
-├─ store    //vuex
-│  ├─ index.js
-│  ├─ modules
-│  │  └─ lang.js
-│  ├─ mutations.js
-│  ├─ state.js
-│  ├─ store.json
-│  └─ u-mixin.js   
-├─ uni.scss
-└─ uview-ui    //uview-ui目录
+```bash
+# npm方式安装
+npm i uview-ui
 ```
 
-### 克隆模板🦕
+## 快速上手
 
+1. `main.js`引入uView库
+```js
+// main.js
+import uView from 'uview-ui';
+Vue.use(uView);
 ```
-1.gitHub
-git clone https://github.com/zhangyeke/kdy-uniapp-cil-v1.git
-2.Gitee
-git clone https://gitee.com/zhang-yeke/kdy-uni-cil-v1.git
+
+2. `App.vue`引入基础样式(注意style标签需声明scss属性支持)
+```css
+/* App.vue */
+<style lang="scss">
+@import "uview-ui/index.scss";
+</style>
 ```
 
-### 鸣谢🌟
+3. `uni.scss`引入全局scss变量文件
+```css
+/* uni.scss */
+@import "uview-ui/theme.scss";
+```
 
-- [unaipp](https://github.com/dcloudio/uni-app)是一个使用 `Vue.js` 开发小程序、H5、App的统一前端框架。
+4. `pages.json`配置easycom规则(按需引入)
 
-- [uview-ui](https://github.com/umicro/uView) 多平台快速开发的UI框架，uniapp生态最优秀的UI框架。
+```js
+// pages.json
+{
+	"easycom": {
+		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
+		// npm安装方式
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		// 下载安装方式
+		// "^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	// 此为本身已有的内容
+	"pages": [
+		// ......
+	]
+}
+```
 
-- [luch-request](https://github.com/lei-mu/luch-request)基于 Promise 对象实现更简单的 request 使用方式，支持请求和响应拦截
+请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容 
+
+## 使用方法
+配置easycom规则后，自动按需引入，无需`import`组件，直接引用即可。
+
+```html
+<template>
+	<u-button>按钮</u-button>
+</template>
+```
+
+请通过[快速上手](https://uviewui.com/components/quickstart.html)了解更详细的内容 
+
+## 链接
+
+- [官方文档](https://uviewui.com/)
+- [更新日志](https://uviewui.com/components/changelog.html)
+- [升级指南](https://uviewui.com/components/changelog.html)
+- [关于我们](https://uviewui.com/cooperation/about.html)
+
+## 预览
+
+您可以通过**微信**扫码，查看最佳的演示效果。
+<br>
+<br>
+<img src="https://uviewui.com/common/weixin_mini_qrcode.png" width="220" height="220" >
+
+<!-- ## 捐赠uView的研发
+
+uView文档和源码全部开源免费，如果您认为uView帮到了您的开发工作，您可以捐赠uView的研发工作，捐赠无门槛，哪怕是一杯可乐也好(相信这比打赏主播更有意义)。
+
+<img src="https://uviewui.com/common/wechat.png" width="220" >
+<img style="margin-left: 100px;" src="https://uviewui.com/common/alipay.png" width="220" >
+ -->
+## 版权信息
+uView遵循[MIT](https://en.wikipedia.org/wiki/MIT_License)开源协议，意味着您无需支付任何费用，也无需授权，即可将uView应用到您的产品中。
