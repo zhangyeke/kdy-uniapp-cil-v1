@@ -43,7 +43,7 @@ export function toast(title, backFun, duration = 1500, mask = true) {
 		duration: duration,
 		success: () => {
 			setTimeout(() => {
-				backFun()
+				typeof backFun == "function" && backFun()
 			}, duration)
 		}
 	})

@@ -13,23 +13,20 @@
 			"style": {
 				"navigationBarTitleText": "%index.page_title%"
 			}
+		}, {
+			"path": "pages/index/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/index/my",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"tabBar": {
 		"color": "#333",
 		"selectedColor": "pink",
 		"backgroundColor": "#fff",
-		"list": [
-			{
+		"list": [{
 				"iconPath": "static/logo.png",
 				"selectedIconPath": "static/logo.png",
 				"text": "%index.page_title%",
